@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Input } from '../../shared/Input';
 import { SingUpConfirmation } from '../SignUpConfirmation/SignUpConfirmation';
 
-async function signUp({ username, password, email, nickname, name, firstName, isMarketingAllowed, setAgreementAccepted }) {
+async function signUp({ username, password, email, name, firstName, isMarketingAllowed, setAgreementAccepted }) {
     try {
         const result = await Auth.signUp({
             username,
@@ -14,7 +14,6 @@ async function signUp({ username, password, email, nickname, name, firstName, is
                 // name,
                 'custom:isMarketingAllowed': isMarketingAllowed,
                 'custom:agreementAccepted': setAgreementAccepted,
-                nickname,
                 // firstName: 
             }
         });
@@ -34,7 +33,6 @@ export const SingUp = (props) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
-    const [nickname, setNickname] = useState('')
 
 
     return (
@@ -44,13 +42,12 @@ export const SingUp = (props) => {
                 <Input name={'Username'} value={username} setValue={setUsername} />
                 <Input name={'Password'} value={password} setValue={setPassword} />
                 <Input name={'Email'} value={email} setValue={setEmail} />
-                <Input name={'Nickname'} value={nickname} setValue={setNickname} />
                 <h3>User Info</h3>
                 <Input name={'firstName'} value={firstName} setValue={setFirstName} />
                 <Input name={'isMarketingAllowed'} value={isMarketingAllowed} setValue={setMarketingAllowed} />
                 <Input name={'agreementAccepted'} value={agreementAccepted} setValue={setAgreementAccepted} />
                 <hr />
-                <button onClick={() => signUp({ username, password, nickname, email, firstName, isMarketingAllowed, agreementAccepted })}>SignUp</button>
+                <button onClick={() => signUp({ username, password, email, firstName, isMarketingAllowed, agreementAccepted })}>SignUp</button>
             </div>
             <SingUpConfirmation />
         </>
