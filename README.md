@@ -10,4 +10,41 @@ Change `include` property
 +++ "src/api/src"
   ]
 ```
-4.
+<b>OPTIONAL(Absolute path resolution support)</b>
+
+4. `yarn add -D react-app-rewired`
+5. Add config-overrides.js in root folder
+```
+const path = require('path');
+
+module.exports = function override(config) {
+  config.resolve = {
+    ...config.resolve,
+    alias: {
+      ...config.alias,
+      '@api': path.resolve(__dirname, 'src/api/src'),
+      '@': path.resolve(__dirname, 'src')
+    },
+  };
+
+  return config;
+};
+```
+6. Add `tsconfig.paths.json`
+```
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@api/*": ["./src/api/src/*"],
+        "@/*": ["./src/*"]
+      }
+    }
+  }
+```
+
+7. Extends existing `tsconfig.json`
+
+```
++++ "extends": "./tsconfig.paths.json",
+```

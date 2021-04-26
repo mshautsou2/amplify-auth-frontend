@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { configure } from './api/src/configure';
+import { configure } from '@api/configure';
 import './config/amplify'
 import { SingIn } from './features/authentication/SignIn/SignIn';
 import { SingUp } from './features/authentication/SignUp/SignUp';
