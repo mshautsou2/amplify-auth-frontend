@@ -1,4 +1,4 @@
-import Amplify, { Auth } from 'aws-amplify';
+import Amplify from 'aws-amplify';
 
 export const amplifyConfig = Amplify.configure({
     Auth: {
@@ -14,10 +14,10 @@ export const amplifyConfig = Amplify.configure({
         // identityPoolRegion: 'XX-XXXX-X',
 
         // OPTIONAL - Amazon Cognito User Pool ID
-        userPoolId: 'us-east-1_XAJRTeIlu',
+        userPoolId: 'us-east-1_cTFNG918b',
 
         // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-        userPoolWebClientId: '1v6hdit8t8dv0gl36lt1nlki76',
+        userPoolWebClientId: '7add2t3ufss1k7hkflh1658hu4',
 
         // // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
         // mandatorySignIn: false,

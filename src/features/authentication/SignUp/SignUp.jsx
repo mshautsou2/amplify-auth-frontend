@@ -13,7 +13,7 @@ async function signUp({ username, password, email, name, firstName, isMarketingA
                 'custom:firstName': firstName,
                 // name,
                 'custom:isMarketingAllowed': isMarketingAllowed,
-                'custom:agreementAccepted': setAgreementAccepted,
+                'custom:isAgreementAccepted': setAgreementAccepted,
                 // firstName: 
             }
         });
@@ -39,9 +39,9 @@ export const SingUp = (props) => {
         <>
             <div>
                 <h2>REGISTRACTION</h2>
+                <Input name={'Email'} value={email} setValue={setEmail} />
                 <Input name={'Username'} value={username} setValue={setUsername} />
                 <Input name={'Password'} value={password} setValue={setPassword} />
-                <Input name={'Email'} value={email} setValue={setEmail} />
                 <h3>User Info</h3>
                 <Input name={'firstName'} value={firstName} setValue={setFirstName} />
                 <Input name={'isMarketingAllowed'} value={isMarketingAllowed} setValue={setMarketingAllowed} />
