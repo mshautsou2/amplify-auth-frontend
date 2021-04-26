@@ -8,11 +8,14 @@ import { SingUp } from './features/authentication/SignUp/SignUp';
 import { BrainTreeCardPayment } from './features/payments/BrainTreeCardPayment';
 import { BrainTreePaypalPayment } from './features/payments/BrainTreePaypalPayment';
 import { BrainTreeVenmoPayment } from './features/payments/BrainTreeVenmoPayment';
+import { BACKEND_URL } from './config/env';
+import { CartScreen } from './features/cart/CartScreen/CartScreen';
+import { fetchAdapter } from '@api/adapters/fetch.adapter';
 // https://blog.logrocket.com/authentication-react-apps-aws-amplify-cognito/
 
 configure({
-  backendUrl: 'test',
-  fetcher: fetch,//replace with axios
+  backendUrl: BACKEND_URL,
+  fetcher: fetchAdapter(fetch),//replace with axios
   tokenExtractor: () => localStorage.getItem('token')
 })
 
@@ -41,6 +44,9 @@ function App() {
           <li>
             <Link to="/payments/braintree/paypal">Braintree Paypal</Link>
           </li>
+          <li>
+            <Link to="/cart/">Cart</Link>
+          </li>
         </ul>
       </nav>
 
@@ -61,6 +67,9 @@ function App() {
         </Route>
         <Route path="/payments/braintree/paypal">
           <BrainTreePaypalPayment />
+        </Route>
+        <Route path="/cart/">
+          <CartScreen />
         </Route>
         {/* <Route path="/users">
           <Users />
