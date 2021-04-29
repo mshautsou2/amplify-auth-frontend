@@ -10,7 +10,7 @@ Change `include` property
 +++ "src/api/src"
   ]
 ```
-<b>OPTIONAL(Absolute path resolution support)</b>
+<b>OPTIONAL(Absolute path resolution)</b>
 
 4. `yarn add -D react-app-rewired`
 5. Add config-overrides.js in root folder

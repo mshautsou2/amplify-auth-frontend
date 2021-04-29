@@ -1,1 +1,1 @@
-export const BACKEND_URL = "http://localhost:3000/dev"
+export const BACKEND_URL = "https://d0kdl41f35.execute-api.us-east-1.amazonaws.com/dev/"
